@@ -35,7 +35,7 @@ from scipy.stats import sem
 #%matplotlib inline
 #%config InlineBackend.figure_format = 'svg'
 
-plt.style.use("nature_neurosci.mplstyle")
+plt.style.use("stylefile.mplstyle")
 
 # ############################################################################
 #                                LOAD DATA                                 #

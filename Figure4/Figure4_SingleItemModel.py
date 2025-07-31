@@ -66,7 +66,7 @@ import seaborn as sns
 import matplotlib.pylab as pylab
 
 import matplotlib.pyplot as plt
-plt.style.use("nature_neurosci.mplstyle")
+plt.style.use("stylefile.mplstyle")
 
 
 # Define colors

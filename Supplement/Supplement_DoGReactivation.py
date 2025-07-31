@@ -36,7 +36,7 @@ from scipy.stats import sem
 
 import matplotlib.pylab as pylab
 
-plt.style.use("nature_neurosci.mplstyle")
+plt.style.use("stylefile.mplstyle")
 
 # ############################################################################
 #                                LOAD DATA                                 #

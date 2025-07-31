@@ -28,7 +28,7 @@ import matplotlib.ticker as ticker
 
 numcores    = multiprocessing.cpu_count() # for parallel processing
 
-plt.style.use("nature_neurosci.mplstyle")
+plt.style.use("stylefile.mplstyle")
 
 import seaborn as sns
 #%matplotlib inline
