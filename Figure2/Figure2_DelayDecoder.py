@@ -116,6 +116,8 @@ def decode_predictions(dataframe = pd.DataFrame(),borders_full=[], neuron_type='
         kf = StratifiedKFold(n_splits=k_folds, shuffle=True, random_state = random_states[cro])
         for k, (train_idx, test_idx) in enumerate(kf.split(X_delay, np.round(np.angle(y), 3).astype(str))):
             X_train = X_delay[train_idx]
+            if intercept == True:
+                X_train = np.array([np.append(1, X_train[i]) for i in range(len(X_train))])  # add intercept
             y_train, y_test = y[train_idx], y[test_idx]
             hemifield_test = hemifield_prev[test_idx]
 
