@@ -150,19 +150,17 @@ def decode_singletrial(dataframe, borders_full, neuron_type, mode):
 #                                               LOAD DATA                                        #
 ##################################################################################################
 
-with open(DATA_SMITH + 'df_dat_correct_eyetracker.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'df_dat_correct_eyetrackerSa0.pickle', 'rb') as handle:
     df_dat_corr = pickle.load(handle)
 
-with open(DATA_SMITH + 'leftRightIdx_eyetracker.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'leftRightIdx_Sa0.pickle', 'rb') as handle:
     leftRightIdx = pickle.load(handle)
 
-left_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))],\
-            'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))],\
-            'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-right_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))],\
-             'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))],\
-             'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-for m in ["Sa", "Pe", "Wa"]:  #
+monkeys=['Sa']#['Sa','Pe', 'Wa']
+
+left_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+right_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+for m in monkeys:
     for n in range(len(leftRightIdx['left'][m])):
         left_idx[m][n] = leftRightIdx['left'][m][n]
         right_idx[m][n] = leftRightIdx['right'][m][n]
@@ -185,7 +183,7 @@ df_dat_corr['hemifield'] = ['left' if (df_dat_corr['targ_angle'][i] < np.round(-
 #           'borders_full', 'num_targs']
 # df_out = pd.DataFrame(columns=labels)
 df_out = pd.DataFrame()
-for mono in ['Sa', 'Pe', 'Wa']:  # for each monkey #,'Pe','Wa'
+for mono in monkeys:  # for each monkey #,'Pe','Wa'
     for sess in range(max(df_dat_corr.loc[df_dat_corr.monkey == mono].session) + 1):  # for each session
         print(mono+str(sess))
 

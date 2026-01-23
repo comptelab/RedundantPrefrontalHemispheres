@@ -84,6 +84,9 @@ target/
 *.pickle
 **/*.pickle
 
+# Zip files
+*.zip
+
 # csv files
 *.csv
 **/*.csv

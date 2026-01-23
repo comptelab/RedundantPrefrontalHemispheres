@@ -27,15 +27,16 @@ from pingouin import circ_corrcc
 ##################################################################################################
 #                                               LOAD DATA                                        #
 ##################################################################################################
-with open(DATA_SMITH + 'df_dat_correct_eyetracker.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'df_dat_correct_eyetrackerSa0.pickle', 'rb') as handle:
     df_dat_corr = pickle.load(handle)
 
+monkeys=['Sa']#['Sa', 'Pe', 'Wa']
 ##################################################################################################
 #                                      SPLIT  DATA INTO SESSIONS                                 #
 ##################################################################################################
 
 df_out = pd.DataFrame()
-for mono in ['Sa', 'Pe', 'Wa']:  # for each monkey #,'Pe','Wa'
+for mono in monkeys:  # for each monkey #,'Pe','Wa'
     for sess in range(max(df_dat_corr.loc[df_dat_corr.monkey == mono].session) + 1):  # for each session
         print(mono+str(sess))
 

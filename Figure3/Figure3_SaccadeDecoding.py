@@ -109,17 +109,17 @@ def decode_predictions(dataframe = pd.DataFrame(),borders_full=[], neuron_type='
 #                                               LOAD DATA                                        #
 ##################################################################################################
 
-with open(DATA_SMITH + 'df_dat_correct_eyetrackerSa.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'df_dat_correct_eyetrackerSa0.pickle', 'rb') as handle:
     df_dat_corr = pickle.load(handle)
 
-with open(DATA_SMITH + 'leftRightIdx_eyetrackerSa.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'leftRightIdx_Sa0.pickle', 'rb') as handle:
     leftRightIdx = pickle.load(handle)
 
-left_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))]}
-#, 'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))], 'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-right_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))]}
-#, 'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))], 'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-for m in ["Sa"]:#, "Pe", "Wa"
+monkeys=['Sa']#['Sa','Pe', 'Wa']
+
+left_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+right_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+for m in monkeys:
     for n in range(len(leftRightIdx['left'][m])):
         left_idx[m][n] = leftRightIdx['left'][m][n]
         right_idx[m][n] = leftRightIdx['right'][m][n]
@@ -129,7 +129,7 @@ for m in ["Sa"]:#, "Pe", "Wa"
 ##################################################################################################
 
 df_out = pd.DataFrame()
-for mono in ['Sa']:#['Sa','Pe', 'Wa']:#, 'Pe']:#
+for mono in monkeys:#['Sa','Pe', 'Wa']:#, 'Pe']:#
     for sess in range(max(df_dat_corr['session'].loc[df_dat_corr['monkey']==mono])+1):
         print(sess)
         df_Sa0_corr = df_dat_corr.loc[(df_dat_corr['monkey']==mono) & (df_dat_corr['session']==sess)].copy().reset_index(drop=True)

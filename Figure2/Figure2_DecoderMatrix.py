@@ -192,16 +192,17 @@ def delay_decoder(dataframe,borders_full, neuron_type):
 ##################################################################################################
 #                                               LOAD DATA                                        #
 ##################################################################################################
-with open(DATA_SMITH + 'df_dat_correct.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'df_dat_correct_Sa0.pickle', 'rb') as handle:
     df_dat_correct = pickle.load(handle)
 
-with open(DATA_SMITH + 'leftRightIdx.pickle', 'rb') as handle:
+with open(DATA_SMITH + 'leftRightIdx_Sa0.pickle', 'rb') as handle:
     leftRightIdx = pickle.load(handle)
 
+monkeys=['Sa']#['Sa','Pe', 'Wa']
 
-left_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))], 'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))], 'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-right_idx = {'Sa': [[] for i in range(len(leftRightIdx['left']['Sa']))], 'Pe':[[] for i in range(len(leftRightIdx['left']['Pe']))], 'Wa':[[] for i in range(len(leftRightIdx['left']['Wa']))]}
-for m in ["Sa", "Pe", "Wa"]:
+left_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+right_idx = {m: [[] for i in range(len(leftRightIdx['left']['Sa']))] for m in monkeys}
+for m in monkeys:
     for n in range(len(leftRightIdx['left'][m])):
         left_idx[m][n] = leftRightIdx['left'][m][n]
         right_idx[m][n] = leftRightIdx['right'][m][n]
@@ -232,7 +233,7 @@ print('loaded data')
     
 labels = ['monkey','session']
 df_out = pd.DataFrame(columns=labels)
-for mono in ['Sa','Pe','Wa']:# for each monkey 
+for mono in monkeys:# for each monkey
     for sess in range(max(df_dat_correct.loc[df_dat_correct.monkey==mono].session)+1):#for each session
         print(mono+str(sess))
         # choose session
