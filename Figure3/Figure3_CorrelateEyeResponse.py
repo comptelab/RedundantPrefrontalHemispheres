@@ -165,7 +165,7 @@ for mono in monkeys:  # for each monkey #,'Pe','Wa'
             # error correlations
             gazeErr = circdist(gaze_angle, df_Sa0_corr['targ_angle'].values)
             responseErr = circdist(df_Sa0_corr['saccade_angle'].values, df_Sa0_corr['targ_angle'].values)
-            circtestErr = circ_corrcc(responseErr, gazeErr, correction_uniform=True)
+            circtestErr = circ_corrcc(responseErr, gazeErr)
             coefErr[t] = circtestErr[0]
             pvalErr[t] = circtestErr[1]
 
