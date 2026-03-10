@@ -31,8 +31,8 @@ To combine these files into the here used data frames, run the scripts from the 
 
 ### Repository structure and analyses:
 - **Folders**: Folders contain the available code to replicate each figure.
-- **Jupyter notebooks**: Notebooks replicate all panels of a figure. The notebooks create figures directly, using preprocessed data and simulation results.
-- **Python scripts**: Scripts contain more computationally expensive processing steps or simulations, which generate the results used for plotting. Therefore the scripts should typically be run before the jupyter notebooks.
+- **Jupyter notebooks**: Notebooks replicate all panels of a figure. The notebooks create figures directly, using preprocessed data and simulation results. (running the notebooks on precomputed data should be fast <10 minutes)
+- **Python scripts**: Scripts contain more computationally expensive processing steps or simulations, which generate the results used for plotting. Therefore the scripts should typically be run before the jupyter notebooks. (Some analyses may take several hours on a standard computer)
 - **Results**: The Results folder is empty for now, fill it with files from the Demo-Data or run yourself.
 
 ### Contact
