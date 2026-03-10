@@ -16,7 +16,7 @@ dependencies:
   - branca=0.5.0=pyhd8ed1ab_0
   - brian2=2.4.2=py36h51d7077_1
   - brotlipy=0.7.0=py36h8f6f2f9_1001
-  - ca-certificates=2025.2.25=h06a4308_0
+  - ca-certificates=2025.7.15=h06a4308_0
   - certifi=2021.5.30=py36h06a4308_0
   - cffi=1.14.6=py36h400218f_0
   - charset-normalizer=2.1.1=pyhd8ed1ab_0
@@ -29,6 +29,7 @@ dependencies:
   - defusedxml=0.7.1=pyhd3eb1b0_0
   - entrypoints=0.3=py36_0
   - expat=2.5.0=h6a678d5_0
+  - filelock=3.4.0=pyhd3eb1b0_0
   - folium=0.13.0=pyhd8ed1ab_0
   - fontconfig=2.14.1=h52c9d5c_1
   - freetype=2.12.1=h4a9f257_0
@@ -184,6 +185,8 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.5=hc292b87_0
   - pip:
+      - pyerf==1.0.1
       - pymicro==0.5.1
+      - scikits-bootstrap==1.1.0
       - vtk==9.3.0
 prefix: /home/melanie/anaconda3/envs/brian2
