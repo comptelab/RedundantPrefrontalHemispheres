@@ -3,8 +3,6 @@
 
 This repository contains the code used to generate the main figures and supplementary analyses presented in the preprint. The code includes simulations, data analysis, and plotting routines.
 
-🔒 Note: The dataset used in the study is not yet publicly available, but will be shared via this repository as soon as possible.
-
 ### Getting started:
 To reproduce the results, we recommend using the environment provided in environment.yml. You can create the environment using:
 ```
@@ -13,14 +11,26 @@ conda activate <env-name>
 ```
 The environment is compatible with both, data analysis and model simulations.
 
-### Repository structure:
-- **Folders**: Folders contain the available code for each figure.
+### Data availability
+To download the data, go to:
+- **Monkey data**: https://doi.org/10.1184/R1/31431415 from McDonnell, Umakantha, Williamson et al. (2026) 
+- **Human multi-item data**: https://osf.io/67tn3/overview and https://osf.io/krv7g/overview from Schneegans and Bays (2016) and Schneegans and Bays (2018) (Fig. 7)
+
+### Data preprocessing
+The monkey data is downloaded as Matlab-files. 
+To combine these files into the here used data frames, run the scripts:
+- **read_MatFiles.py**: transforms the individual files into one data frame and aligns the eye tracker.  
+- **create_sequentialDataframe.py**: creates a behavioral dataframe from this information using only correct, sequential trials.
+in the main folder.
+
+### Repository structure and analyses:
+- **Folders**: Folders contain the available code to replicate each figure.
 - **Jupyter notebooks**: Notebooks replicate panels of specific figures. The notebooks create figures directly, using preprocessed data and simulation results.
-- **Python scripts**: Scripts contain more computationally expensive preprocessing steps or simulations.
-- **Results**: The Results folder is empty for now. I can send an example session upon request but it is slightly too large for simple uploading.
+- **Python scripts**: Scripts contain more computationally expensive preprocessing steps or simulations, which save into the previously mentioned files used for plotting.
+- **Results**: The Results folder is empty for now. I can send an example session upon request but it is slightly too large for github.
 
 ### Notes
-While the notebooks should run as-is (once the data is available), some files assume a specific folder structure and data location, which will be clarified once the dataset is released.
+While the notebooks should run as-is, some files assume a specific folder structure and data location, which will be clarified once the dataset is released.
 All figures should be reproducible from the notebooks. Though figures will change when only running with the currently available single session.
 
 ### Contact
