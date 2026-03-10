@@ -20,18 +20,14 @@ To download the data, go to:
 The monkey data is downloaded as Matlab-files. 
 To combine these files into the here used data frames, run the scripts:
 - **read_MatFiles.py**: transforms the individual files into one data frame and aligns the eye tracker.  
-- **create_sequentialDataframe.py**: creates a behavioral dataframe from this information using only correct, sequential trials.
+- **create_sequentialDataframe.py**: creates a behavioral dataframe from this information using only correct, sequential trials.\\
 in the main folder.
 
 ### Repository structure and analyses:
 - **Folders**: Folders contain the available code to replicate each figure.
-- **Jupyter notebooks**: Notebooks replicate panels of specific figures. The notebooks create figures directly, using preprocessed data and simulation results.
-- **Python scripts**: Scripts contain more computationally expensive preprocessing steps or simulations, which save into the previously mentioned files used for plotting.
+- **Jupyter notebooks**: Notebooks replicate all panels of a figure. The notebooks create figures directly, using preprocessed data and simulation results.
+- **Python scripts**: Scripts contain more computationally expensive processing steps or simulations, which generate the results used for plotting. Therefore the scripts should typically be run before the jupyter notebooks.
 - **Results**: The Results folder is empty for now. I can send an example session upon request but it is slightly too large for github.
-
-### Notes
-While the notebooks should run as-is, some files assume a specific folder structure and data location, which will be clarified once the dataset is released.
-All figures should be reproducible from the notebooks. Though figures will change when only running with the currently available single session.
 
 ### Contact
 If you have any questions, encounter issues, or would like to discuss the methods or paper, feel free to reach out via github or email (mel.tschiersch@gmail.com)
