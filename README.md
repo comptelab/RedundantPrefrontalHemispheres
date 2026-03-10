@@ -12,7 +12,7 @@ conda activate <env-name>
 The environment is compatible with both, data analysis and model simulations. (Installation time ~10 min.)
 
 ### Demo-Data availability
-The Demo-Data (example session) with all analysis run can be found here: 
+The Demo-Data (example session) with all analysis run can be found here: https://drive.google.com/file/d/1IhDjsYeaPJ3Vtto3sO_bfINDxADJa-Hk/view?usp=sharing 
 - Unzip the file
 - Move contents to your local ./Results folder
 - All monkey analyses can be run with the Demo-Data, though figures may change appearance (for Fig. 7, also download the human data (see below)).
